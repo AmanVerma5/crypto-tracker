@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --white:#fff;
+    --black:#111;
+    --blue:#3a80e9;
+    --grey:#888;
+    --darkgrey:#1b1b1b;
+    --green:#61c96f;
+    --red:#f94141;
+}
+
+body{
+    margin:0;
+    height:200vh;
+    background-color: var(--black);
+    color:var(--white);
+    font-family: 'Inter', sans-serif;
+}
+
+
+.dot{
+    color: #3a80e9ff;
+}
+.navbar {
+    padding-left:3rem;
+    padding-right:3rem;
+}
+::-webkit-scrollbar{
+    width:0.3rem;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--blue);
+    border-radius: 3rem;
+}
+::-webkit-scrollbar-track{
+    background: var(--black);
+}
+a{
+    color: var(--white);
+    text-decoration: none;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.links{
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+    margin-right: 1.5rem;  
+}
+.mobile-drawer{
+    display: none;
+}
+.links a p{   
+    color:var(--grey);
+    font-weight:600;
+}
+@media only screen and (max-width:800px){
+    .links{
+        display: none;
+    }
+    .mobile-drawer{
+        display: block;
+    }
+    .side-bar{
+        width:30vw;
+        height:100vh;
+        background-color: var(--black);
+    }
+    .side-bar a p{
+        color:var(--grey);
+        margin-left:1rem;
+    }
+}
