@@ -4,6 +4,7 @@ import CustomButton from "./CustomButton";
 import iphone from "../images/iphone.png";
 import gradient from "../images/gradient.png";
 import {motion} from 'framer-motion';
+import { Link } from "react-router-dom";
 
 const LandingPageComponent=()=>{
     return(
@@ -25,7 +26,9 @@ const LandingPageComponent=()=>{
             </motion.h1>
             <p className="info">Track crypto through a public api in real time. Visit the dashboard to do so!</p>
             <div className="buttons">
-                <CustomButton text="Dashboard" outlined={false}/>
+                <Link to='/dashboard'>
+                    <CustomButton text="Dashboard" outlined={false}/>
+                </Link>
                 <CustomButton text="Share" outlined={true}/>
             </div>
            </div>

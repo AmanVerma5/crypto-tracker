@@ -1,0 +1,152 @@
+.grid-container{
+    width:17%;
+    background-color: var(--darkgrey);
+    border: 2px solid var(--darkgrey);
+    border-radius: 1rem;
+    padding:10px;
+    padding-left: 30px;  
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+.coin-image{
+    display: flex;
+    align-items: center;
+    width:2.5rem;
+    margin-right:10px
+}
+
+img{
+    width:100%;
+}
+.coin{
+    display: flex;
+    margin-top: 20px;
+   
+}
+.coin-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 700;
+}
+.coin-title p{
+    margin:0;
+}
+.coin-id{
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 10px;
+    color:var(--grey)
+}
+.coin-change{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1rem;
+    gap:1.5rem;
+}
+.percentage-change{
+    border-radius: 1rem;
+    padding:0.5rem 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    min-width: 50px;
+}
+.positive{
+    border:2px solid var(--green);
+    color:var(--green);
+}
+.positive:hover{
+    background-color: var(--green);
+    color: var(--white);
+}
+.negative{
+    border:2px solid var(--red);
+    color:var(--red);
+}
+.negative:hover{
+    background-color: var(--red);
+    color: var(--white);
+}
+.grid-container:hover{
+    transform: scale(1.02)!important;
+    transition: all 0.3s;
+    border: 2px solid var(--red);
+}
+.grid-container-green:hover{
+    transform: scale(1.02)!important;
+    transition: all 0.3s;
+    border: 2px solid var(--green);
+}
+.round-up{
+    display: flex;
+    color: var(--green);
+    border: 2px solid var(--green);
+    border-radius: 50%;
+    align-items: center;
+    padding: 3px;
+}
+h4{
+    margin-bottom:1rem ;
+}
+.round-down{
+    color:var(--red);
+    border: 2px solid var(--red);
+    border-radius: 50%;
+    display: flex;
+    padding: 3px;
+}
+.round-up:hover{
+    background-color: var(--green);
+    color: var(--white);
+    transition: all 0.3s;
+}
+.round-down:hover{
+    background-color: var(--red);
+    color: var(--white);
+    transition: all 0.3s;
+}
+.total-volume{
+    font-size: 12px;
+    font-weight: 800;
+    color:var(--grey)
+}
+.volume{
+    font-weight: 500;
+}
+.grid-container p{
+    margin-bottom: 0;
+}
+@media only screen and (max-width:1024px) {
+    .grid-container{
+        width:25%;
+    }
+    
+}
+@media only screen and (max-width:850px) {
+    table{
+        width:100%;
+    }
+    .grid-container{
+        width:35%;
+    }   
+}
+
+@media only screen and (max-width:500px) {
+    .grid-container{
+        width:50%;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .grid-container{
+        width:60%;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    .grid-container{
+        width:75%;
+    }
+}

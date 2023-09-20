@@ -1,6 +1,7 @@
 import React from "react";
 import TemporaryDrawer from './drawer.js';
 import CustomButton from "./CustomButton.js";
+import { Link } from "react-router-dom";
 const NavBar=()=>{
     return(
         <nav className="navbar">
@@ -10,15 +11,15 @@ const NavBar=()=>{
                 </h1>
             </div>
             <div className="links">
-                    <a href="/">
+                    <Link to="/">
                         <p>Home</p>
-                    </a>
-                    <a href="/">
+                    </Link>
+                    <Link to="/">
                         <p>Compare</p>
-                    </a>
-                    <a href="/">
+                    </Link>
+                    <Link to="/dashboard">
                         <CustomButton text="Dashboard" outlined={false}/>
-                    </a>
+                    </Link>
                     
                 </div>
                 <div className="mobile-drawer">

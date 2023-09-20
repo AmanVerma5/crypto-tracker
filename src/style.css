@@ -9,10 +9,11 @@
     --green:#61c96f;
     --red:#f94141;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body{
     margin:0;
-    height:200vh;
     background-color: var(--black);
     color:var(--white);
     font-family: 'Inter', sans-serif;

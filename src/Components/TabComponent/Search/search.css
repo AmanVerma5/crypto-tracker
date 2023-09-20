@@ -1,0 +1,22 @@
+.search-bar{
+    width:80%;
+    margin:1.5rem auto;
+    background-color: var(--darkgrey);
+    height:50px;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+}
+.search-logo{
+    color:var(--grey);
+    margin-left:20px;
+}
+.search-bar input{
+    margin-left:10px;
+    width:90%;
+    background-color: var(--darkgrey);
+    outline: none;
+    border:none;
+    color:var(--white);
+    font-weight: 600;
+}
