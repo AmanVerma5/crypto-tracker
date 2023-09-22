@@ -14,7 +14,7 @@ const NavBar=()=>{
                     <Link to="/">
                         <p>Home</p>
                     </Link>
-                    <Link to="/">
+                    <Link to="/compare">
                         <p>Compare</p>
                     </Link>
                     <Link to="/dashboard">
@@ -24,7 +24,7 @@ const NavBar=()=>{
                 </div>
                 <div className="mobile-drawer">
                         <TemporaryDrawer />
-                    </div>
+                </div>
         </nav>
     )
 }

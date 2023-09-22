@@ -76,3 +76,13 @@ a{
         margin-left:1rem;
     }
 }
+.coin-grey{
+    width:95%;
+    border-radius: 1rem;
+    background-color: var(--darkgrey) !important;
+    margin:1rem auto;
+}
+.line-chart canvas {
+    padding: 1rem;
+    padding-bottom: 2rem;
+}

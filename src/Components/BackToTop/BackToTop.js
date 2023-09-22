@@ -1,27 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
 import './style.css';
 
-const BackToTop=()=>{
-    let mybutton = document.getElementsByClassName("back-to-top")[0];
+const BackToTop = () => {
+    const [showButton, setShowButton] = useState(false);
 
-    window.onscroll = function() {scrollFunction()};
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 200) {
+                setShowButton(true);
+            } else {
+                setShowButton(false);
+            }
+        };
 
-    function scrollFunction() {
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            mybutton.style.display = "flex";
-        } else {
-            mybutton.style.display = "none";
-        }
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const topFunction = () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     }
 
-    function topFunction() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
-
-    return(
-        <div className="back-to-top" onClick={()=>topFunction()}>
+    return (
+        <div className={`back-to-top ${showButton ? 'visible' : ''}`} onClick={topFunction}>
             <ArrowUpwardRoundedIcon />
         </div>
     )

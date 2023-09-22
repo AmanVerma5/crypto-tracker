@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import NavBar from"../Components/NavBar";
 import TabComponent from "../Components/TabComponent/TabComponent";
-import axios from "axios";
 import Search from "../Components/TabComponent/Search/Search";
 import PaginationComponent from "../Components/TabComponent/Pagination/Pagination";
 import Loader from "../Components/Loader";
 import BackToTop from "../Components/BackToTop/BackToTop";
+import { getCoins } from "../functions/getCoins";
 
 const Dashboard=()=>{
     const [coins,setCoins]=useState([]);
@@ -27,19 +27,18 @@ const Dashboard=()=>{
     let filteredCoins=coins.filter((item)=>item.name.toLowerCase().includes(search.toLowerCase())||item.symbol.toLowerCase().includes(search.toLowerCase()));
 
     useEffect(()=>{
-        axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en')
-        .then((response)=>{
-            setCoins(response.data)
-            console.log(coins)
-            setPaginatedCoins(response.data.slice(0,10));
-            setCoins(isLoading(false))
-        })
-        .catch((error)=>setIsLoading(false))
+        getData()
     },[])
 
-    setTimeout(()=>{
-        console.log(coins)
-    },5000)
+    const getData=async ()=>{
+        const myCoins= await getCoins();
+        if(myCoins){
+            setCoins(myCoins)
+            setPaginatedCoins(myCoins.slice(0,10));
+            setIsLoading(false)
+        }
+    }
+
     return(
         <>
         {isLoading ? (<Loader/>):(
