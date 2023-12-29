@@ -82,7 +82,7 @@ const CoinPage=()=>{
             <>
                 <div className="coin-grey"><List coin={coinData}/></div>
                 <div className="coin-grey line-chart">
-                    <SelectDays days={days} handleDaysChange={handleDaysChange}/>
+                    <SelectDays days={days} handleDaysChange={handleDaysChange} noPTag={false}/>
                     <TogglePriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
                     <LineChart chartData={chartData} priceType={priceType}/>
                 </div>
